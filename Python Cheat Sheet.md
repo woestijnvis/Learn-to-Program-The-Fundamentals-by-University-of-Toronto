@@ -2,7 +2,7 @@
 
 ## Variables
 
-The general form of an assignment statement:
+The general form for an assignment statement:
 
 ```
 variable = expression
@@ -18,6 +18,8 @@ variable = expression
 >>> 1 + 1
 2
 >>>
+
+# !! Note that an expression can have one value, it evaluates to itself. !!
 ```
 
 ## Functions
@@ -35,9 +37,11 @@ def multi(num):
 
 def area(base, height)
     return base * height / 2
+
+# !! Note that a function can have multiple parameters. !!
 ```
 
-The general form of an function call:
+The general form for an function call:
 
 ```
 function_name(arguments, arguments)
@@ -49,4 +53,6 @@ function_name(arguments, arguments)
 
 >>> area(3, 4)
 6.0
+
+# !! Note that a function call can have multiple arguments. !!
 ```
