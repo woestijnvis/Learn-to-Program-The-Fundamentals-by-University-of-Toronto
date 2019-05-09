@@ -15,7 +15,7 @@ variable = expression
 >>> spam = 'Bring a towel.'
 >>> spam
 'Bring a towel.'
->>> 1 + 1
+>>> sum = 1 + 1
 2
 >>>
 
