@@ -19,7 +19,7 @@ variable = expression
 2
 >>>
 
-# !! Note that an expression can have one value, it evaluates to itself. !!
+# !! Note that an expression can have a single value, it evaluates to itself. !!
 ```
 
 ## Functions
