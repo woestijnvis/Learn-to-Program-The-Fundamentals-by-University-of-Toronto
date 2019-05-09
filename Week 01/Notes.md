@@ -37,7 +37,7 @@ Examples of terminology:
 
 The general form of an assignment statement:
 
-> `variable = expression`.
+> `variable = expression`
 
 Example:
 
