@@ -17,7 +17,6 @@ variable = expression
 'Bring a towel.'
 >>> sum = 1 + 1
 2
->>>
 
 # !! Note that an expression can have a single value, it evaluates to itself. !!
 ```
