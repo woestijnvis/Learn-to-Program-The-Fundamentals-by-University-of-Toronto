@@ -98,13 +98,18 @@ Terminology:
 - Call: ask python to evaluate a function.
 - Return: pass back a value.
 
-In the previous example, `max(argument, argument)` and `round(argument)`, are built-in functions. There is also a help function that can give you more information about a built-in function. Example:
+In the previous example, `max(argument, argument)` and `round(argument)`, are built-in functions. There is also a help function that can give you more information about a built-in function. Example for the function `max()`:
 
 ```python
->>> help(function_name)
-```
+max(...)
+    max(iterable, *[, default=obj, key=func]) -> value
+    max(arg1, arg2, *args, *[, key=func]) -> value
 
-The man-page for the built-in function is shown when you issue the above command. Press `q` to exit.
+    With a single iterable argument, return its biggest item. The
+    default keyword-only argument specifies an object to return if
+    the provided iterable is empty.
+    With two or more arguments, return the largest argument.
+```
 
 To show all built-in functions, run:
 
@@ -121,7 +126,7 @@ def function_name(parameter):
     body
 ```
 
-Rules for defining a function definition is:
+Rules for defining a function definition are:
 
 1. Functions start with the word `def`,
 2. Then comes the `function_name`,
@@ -129,16 +134,47 @@ Rules for defining a function definition is:
 4. And then a colon.
 5. After that comes the `body` (code and comments).
 
-Functions often end with the return statement.
+Functions often end with the return statement and pass back a value to the caller.
 
 Example:
 
 ```python
->>> def x(y):
-    return y * 2
->>> x(2)
+>>> def multi(num):
+        return num * 2
+>>> multi(2)
 4
 >>>
 ```
 
-Function calls are often expressions and can be stored in variables.
+In the above example, we call the definition `multi` and the argument provided is the value `2`. The definition returns the value of the expression `2 * 2`, in this case `4`. `num` gets assigned a value of `2` and is therefor a variable. 
+
+> Function calls are often expressions.
+
+You can assign the return of a function to a variable:
+
+```python
+>>> def multi(num):
+        return num * 2
+>>> result = multi(2)
+>>> result
+4
+>>>
+```
+
+Rules for execution a function call:
+
+1. Evaluate the arguments to produce memory addresses.
+2. Store those memory addresses in the corresponding parameters.
+3. Execute the body of the function.
+
+Take this example and the explanation below it:
+
+```python
+>>> def area(base, height):
+        return base * height / 2
+>>> area(3, 4)
+6.0
+>>>
+```
+
+This function calculates the area of a triangle. The function needs two arguments: `base` and `height`. The arguments for `base` and `height` are `3` and `4`. Even a single value like the int `3` or `4` evaluates to itself. That means that the expression for base is `3` and heights get the expression `4`. Those expressions are stored in a memory address and the parameters for `base` and `height` contain the corresponding memory address. After the call, the body of code runs and produces the expression `6.0`. This value gets returned.
