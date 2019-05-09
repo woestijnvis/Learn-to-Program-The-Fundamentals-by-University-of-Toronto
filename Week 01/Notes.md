@@ -177,4 +177,4 @@ Take this example and the explanation below it:
 >>>
 ```
 
-This function calculates the area of a triangle. The function needs two arguments: `base` and `height`. The arguments for `base` and `height` are `3` and `4`. Even a single value like the int `3` or `4` evaluates to itself. That means that the expression for base is `3` and heights get the expression `4`. Those expressions are stored in a memory address and the parameters for `base` and `height` contain the corresponding memory address. After the call, the body of code runs and produces the expression `6.0`. This value gets returned.
+This function calculates the area of a triangle. The function needs two arguments: `base` and `height`. The arguments for `base` and `height` are `3` and `4`. Even a single value like the int `3` or `4` evaluates to itself. That means that the expression for `base` is `3` and `height` get the expression `4`. Those expressions are stored in a memory address and the parameters for `base` and `height` contain the corresponding memory address. After the call, the body of code runs and produces the expression `6.0`. This value gets returned.
