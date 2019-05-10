@@ -18,7 +18,7 @@ variable = expression
 >>> sum = 1 + 1
 2
 
-# !! Note that an expression can have a single value, it evaluates to itself. !!
+# !! Note that an expression can have a single value because it evaluates to itself. !!
 ```
 
 ## Functions
