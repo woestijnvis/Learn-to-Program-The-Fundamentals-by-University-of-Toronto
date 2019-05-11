@@ -80,11 +80,13 @@ def area(base, height):
 
 The built-in help function shows the description of a function. The parameters are shown in IDLE when you type the function name and first parenthesis.
 
-!["Example of function help."](function_description.png "Example of function help.")
+!["Example of function help."](function_description.png "Example of function help")
 
 # Part 2: Designing Functions
 
 ## Function Design Recipe
+
+...
 
 ## Function Reuse
 
