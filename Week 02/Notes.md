@@ -64,6 +64,24 @@ In the above example, on line 3, the function `square_print` is called with `4` 
 
 ## Docstrings and Function Help
 
+Docstrings provide information and help for you functions.
+
+Example:
+
+```python
+def area(base, height):
+    """(number, number) -> number
+    
+    Return the area of a triangle with dimensions base and height.
+    """
+    
+    return base * height / 2
+```
+
+The built-in help function shows the description of a function. The parameters are shown in IDLE when you type the function name and first parenthesis.
+
+!["Example of function help."](function_description.png "Example of function help.")
+
 # Part 2: Designing Functions
 
 ## Function Design Recipe
