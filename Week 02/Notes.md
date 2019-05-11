@@ -36,7 +36,7 @@ Example of a `return` statement:
 >>>
 ```
 
-In the above example, on line 3, the function `square_return` is called and the argument provided is `4`. The function takes the argument and puts 4 to the power 2. This expression results in the value `16`. It is the memory address that contains `16` that is assigned to the variable `answer_return`. Nothing is displayed so far. But when you call `answer_return`, it will show the value that is contained in the memory address. Notice how you can call `answer_return` and that is 'remembers' the value `16`.
+In the above example, on line 3, the function `square_return` is called and the argument provided is `4`. The function takes the argument and puts 4 to the power 2. This expression results in the value `16`. It is the memory address (that contains `16`) that is assigned to the variable `answer_return`. Nothing is displayed to the user, there was only some calculation done. But when you call `answer_return`, it will show the value that is contained in the memory address. Notice how you can call `answer_return` over and over and that is keeps retaining the value `16`.
 
 The general form for a `print()` statement:
 
@@ -58,9 +58,9 @@ The square of num is 16
 >>> 
 ```
 
-In the above example, on line 3, the function `square_print` is called with `4` as provided argument. There is no `return` statement in this function, so what will happen is that the string `The square of num is 16` will be printed once. And it is printed immediately. When you assign the string to `answer_print` by calling the function it is displayed directly. If you call it again, like on line 5, it shows nothing, it's an empty variable.
+In the above example, on line 3, the function `square_print` is called with `4` as provided argument. There is no `return` statement in this function, so what will happen is that the string `The square of num is 16` will be printed once and immediately. If you call `answer_print`, like on line 5, it shows nothing because the function `square_print` has the value `None`. This is caused by the lack of a `return` statement.
 
-In concussion regarding `return` vs `print()`: The `return` statement gives you a value that you can assign. When this assignment is done, the value is kind of permanently stored (until you call the function again and supply different arguments). `return` is like a loyal dog with good memory that loves you. The `print` statement in a function prints something to the screen for the user. After printing, there is no value to remember. `print()` is like a cat which has Alzheimers and dislikes you.
+> A function that does not have a return statement returns `None`.
 
 ## Docstrings and Function Help
 
