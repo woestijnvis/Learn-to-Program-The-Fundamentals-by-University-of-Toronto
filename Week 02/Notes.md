@@ -182,6 +182,42 @@ Step 6, **tests**:
 
 ## Function Reuse
 
-...
+Functions can be reused (that's why we're writing functions, for easy code reuse) and they can be called from other functions and in function calls. Let explore calling functions in other functions first.
+
+We have a function that calculates the perimeter of a triangle:
+
+```python
+def perimeter(side1, side2, side3):
+    """(number, number, number) -> number
+    
+    Return the perimeter of a triangle with sides of length side1, side2 and side3.
+    
+    >>> perimeter(3, 4, 5)
+    12
+    >>> perimeter(10.5, 6, 9.3)
+    25.8
+    """
+    
+    return side1 + side2 + side3
+```
+
+The problem we would like to solve is that we also need the semiperimeter. We can write another function for that:
+
+```python
+def semiperimeter(side1, side2, side3):
+    """(number, number, number) -> float
+    
+    Return the semiperimeter of a triangle with sides of length side1, side2, side3.
+    
+    >>> semiperimeter(3, 4, 5)
+    6.0
+    >>> semiperimeter(10.5, 6, 9.3)
+    12.9
+    """
+    
+    return perimeter(side1, side2, side3) / 2
+```
+
+The only function `semiperimeter` has is adding all sides and deviding the result by 2. We could write all of that ourselfs but we outsource the addition part to function `perimeter`. After we get the result back (the addition) we divide it by 2. This sounds like a silly example, but it shows how to call other functions instead of rewriting code. Remember that functions are for code-reuse.
 
 ## Visualizing Function Calls
