@@ -86,7 +86,99 @@ The built-in help function shows the description of a function. The parameters a
 
 ## Function Design Recipe
 
-...
+Functions should be designed with these six steps in mind:
+
+1. Examples
+2. Type contract
+3. Header
+4. Description
+5. Body
+6. Tests
+
+Take a look at the example below. The problem is that we would like to convert Fahrenheit degrees to Celsius degrees.
+
+Step 1, **examples**:
+
+- What should your function do?
+- Type a couple of examples.
+- Pick a name for the function. What is the short answer to "What does your function do"?
+
+```python
+>>> convert_to_celsius(32)
+0.0
+>>> convert_to_celsius(212)
+100.0
+```
+
+Step 2, **type contract**:
+
+- What are the parameter types?
+- What type of value is returned?
+
+```python
+(number) -> float
+
+>>> convert_to_celsius(32)
+0.0
+>>> convert_to_celsius(212)
+100.0
+```
+
+Step 3, **header**:
+
+- Pick meaningful parameter names.
+
+```python
+def convert_to_celsius(fahrenheit):
+    """(number) -> float
+
+    >>> convert_to_celsius(32)
+    0.0
+    >>> convert_to_celsius(212)
+    100.0
+    """
+```
+
+Step 4, **description**:
+
+- Mention every parameter in your function.
+- Describe the return value.
+
+```python
+def convert_to_celsius(fahrenheit):
+    """(number) -> float
+
+    Return the number of Celsius degrees equivalent to fahrenheit degrees.
+
+    >>> convert_to_celsius(32)
+    0.0
+    >>> convert_to_celsius(212)
+    100.0
+    """
+```
+
+Step 5, **body**:
+
+- Write the code.
+
+```python
+def convert_to_celsius(fahrenheit):
+    """(number) -> float
+
+    Return the number of Celsius degrees equivalent to fahrenheit degrees.
+
+    >>> convert_to_celsius(32)
+    0.0
+    >>> convert_to_celsius(212)
+    100.0
+    """
+    
+    return (fahrenheit - 32) * 5 / 9
+```
+
+Step 6, **tests**:
+
+- Run the examples from step 1 and try some other tests.
 
 ## Function Reuse
 

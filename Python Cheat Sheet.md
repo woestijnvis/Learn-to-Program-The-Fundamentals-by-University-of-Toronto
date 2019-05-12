@@ -60,6 +60,42 @@ function_name(arguments, arguments)
 # !! Note that a function call can have multiple arguments. !!
 ```
 
+Six steps in function design:
+
+1. **Examples**
+    - What should your function do?
+    - Type a couple of examples.
+    - Pick a name for the function. What is the short answer to "What does your function do"?
+2. **Type contract**
+    - What are the parameter types?
+    - What type of value is returned?
+3. **Header**
+    - Pick meaningful parameter names.
+4. **Description**
+    - Mention every parameter in your function.
+    - Describe the return value.
+5. **Body**
+    - Write the code.
+6. **Tests**
+    - Run the examples from step 1 and try some other tests.
+
+Example of applied function design:
+
+```python
+def convert_to_celsius(fahrenheit):
+    """(number) -> float
+
+    Return the number of Celsius degrees equivalent to fahrenheit degrees.
+
+    >>> convert_to_celsius(32)
+    0.0
+    >>> convert_to_celsius(212)
+    100.0
+    """
+    
+    return (fahrenheit - 32) * 5 / 9
+```
+
 ## Built-in functions
 
 `print()`
