@@ -218,6 +218,36 @@ def semiperimeter(side1, side2, side3):
     return perimeter(side1, side2, side3) / 2
 ```
 
-The only function `semiperimeter` has is adding all sides and deviding the result by 2. We could write all of that ourselfs but we outsource the addition part to function `perimeter`. After we get the result back (the addition) we divide it by 2. This sounds like a silly example, but it shows how to call other functions instead of rewriting code. Remember that functions are for code-reuse.
+The only function `semiperimeter` has is adding all sides and dividing the result by 2. We could write all of that ourselves but we outsource the addition part to function `perimeter`. After we get the result back (the addition) we divide it by 2. This sounds like a silly example, but it shows how to call other functions instead of rewriting code. Remember that functions are for code-reuse.
+
+Let's explore calling functions in function calls. The problem we want to solve is to figure out which pizza slice is the largest. We have a tape measure and a function for that:
+
+```python
+def area(base, height):
+    """(number, number) -> number
+    
+    Return the area of a triangle with dimensions base and height.
+    """
+    
+    return base * height / 2
+```
+
+```python
+>>> max(area(3.8, 7), area(3.5, 6.8))
+13.299999999999999
+>>> area(3.8, 7)
+13.299999999999999
+>>> 
+```
+
+We call the function `area` in function call `max()`. `max()` needs at least two arguments to spit out the largest value. We provide two arguments by calling `area` and providing the arguments we measured. The function `area` returns a single value and because we called it two times, but with different arguments we get two different values back. The two values are then compared to each other by `max` and evaluate to a single value. To visualise the flow of this function call:
+
+```
+max(area(3.8, 7), area(3.5, 6.8))
+↓
+max(13.299999999999999, 11.9)
+↓
+13.299999999999999
+```
 
 ## Visualizing Function Calls
