@@ -256,3 +256,5 @@ max(13.299999999999999, 11.9)
 ```
 
 ## Visualizing Function Calls
+
+What stood out most to me is the scope of variables in a a function. Variables in a function are destroyed after the function ends. Also, variables in a function can only be used locally (in the function). They do not exist outside of the function.
