@@ -95,7 +95,7 @@ Functions should be designed with these six steps in mind:
 5. Body
 6. Tests
 
-Take a look at the example below. The problem is that we would like to convert Fahrenheit degrees to Celsius degrees.
+Take a look at the example below. The problem that we would like to solve is creating a function that converts Fahrenheit degrees to Celsius degrees.
 
 Step 1, **examples**:
 
@@ -181,5 +181,7 @@ Step 6, **tests**:
 - Run the examples from step 1 and try some other tests.
 
 ## Function Reuse
+
+...
 
 ## Visualizing Function Calls
