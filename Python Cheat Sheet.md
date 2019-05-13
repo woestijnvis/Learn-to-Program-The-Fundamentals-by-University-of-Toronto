@@ -118,3 +118,51 @@ What's your name? John Doe
 >>> name
 'John Doe'
 ```
+
+## Boolean operators
+
+Comparision operators:
+
+| Description              | Operator | Example  | Result  |
+|:-------------------------|:--------:|:---------|:--------|
+| less than                | `<`      | `3 < 4`  | `True`  |
+| greater than             | `>`      | `3 > 4`  | `False` |
+| equal to                 | `==`     | `3 == 4` | `False` |
+| greater than or equal to | `>=`     | `3 >= 4` | `False` |
+| less than or equal to    | `<=`     | `3 <= 4` | `True`  |
+| not equal to             | `!=`     | `3 != 4` | `True`  |
+
+Logical operators:
+
+| Description | Operator | Example                     | Result  |
+|:------------|:--------:|:----------------------------|:--------|
+| not         | `not`    | `not (80 >= 50)`            | `False` |
+| and         | `and`    | `(80 >= 50) and (70 <= 50)` | `False` |
+| or          | `or`     | `(80 >= 50) or (70 <= 50)`  | `True`  |
+
+The `and` operator evaluates to `True` if both expression evaluate to `True`. If the first expression is `False`, the second expression will not even be checked:
+
+| Expression 1 | Expression 2 | Results |
+|:-------------|:-------------|:-------:|
+| `True`       | `True`       | `True`  |
+| `True`       | `False`      | `False` |
+| `False`      | `True`       | `False` |
+| `False`      | `False`      | `False` |
+
+The `or` operator evaluates to `True` if at least one expression evaluates to `True`. If the first expression is `True`, the second expression will not be checked because the statement as a whole already evaluates to `True`:
+
+| Expression 1 | Expression 2 | Results |
+|:-------------|:-------------|:-------:|
+| `True`       | `True`       | `True`  |
+| `True`       | `False`      | `True`  |
+| `False`      | `True`       | `True`  |
+| `False`      | `False`      | `False` |
+
+The `not` operator evaluates to `True` if the expression evaluates to `False`:
+
+| Expression 1 | `not` Expression 1 |
+|:-------------|:-------------------|
+| `True`       | `False`            |
+| `False`      | `True`             |
+
+The order of precedence for logical operators is `not`, `and` and `or`.
