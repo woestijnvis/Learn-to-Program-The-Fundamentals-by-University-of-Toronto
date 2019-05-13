@@ -94,7 +94,7 @@ False
 
 ## Converting Between `int`, `str`, and `float`
 
-The `str()` function takes a any number and turns it into a string. Example:
+The `str()` function takes any number and turns it into a string. Example:
 
 ```python
 >>> str(3)
@@ -155,10 +155,77 @@ def area2(side1, side2, side3):
     return area
 ```
 
-# Part 2: If statements
+# Part 2: `if` statements
 
-## If Statements
+## `if` Statements
 
-## No if Required
+`if` statements are used in deciding which code is executed.
+
+The general form for an `if` statement:
+
+```python
+if expression:
+    body
+```
+
+`if` statements are usually combined with `elif` and/or `else` statements. The number of `elif` can be endless, but there can only be one `else` and that one closes the `if` statement. Example:
+
+```python
+if expression:
+    body
+elif expression_2:
+    body
+else expression_3:
+    body
+```
+
+Statements are executed until there is one met that is `True`. When a statements is `True`, all following statements are ignored. Statements are executed from top to bottom. If none of the `if` and/or `elif` statements evaluate to `True`, the `else` statement will be executed.
+
+Example:
+
+```python
+def report_status(scheduled_time, estimated_time):
+    """(float, float) -> str
+    
+    Description here.
+    
+    Preconditions here.
+    
+    >>> report_status(14.3, 14.3)
+    'on time'
+    >>> report_status(12.5, 11.5)
+    'early'
+    >>> report_status(9.0, 9.5)
+    'delayed'
+    """
+    if scheduled_time == estimated_time:
+        return 'on time'
+    elif scheduled_time > estimated_time:  
+        return 'early'
+    else:
+        return 'delayed'
+```
+
+## No `if` Required
+
+Take this example:
+
+```python
+def is_even(num):
+    if num % 2 == 0:
+        return True
+    else:
+        return False
+```
+
+It can be shortened to this:
+
+```python
+def is_even(num):
+    return num % 2 == 0
+```
+
+The expression `num % 2 == 0` already produces a Boolean. If an expression evaluates to a Boolean value, don't put it into an `if/elif/else` statement. You have to type less, it's easier to read and it makes for better code quality.
 
 ## Structuring if Statements
+
