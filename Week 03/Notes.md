@@ -55,6 +55,7 @@ The order of precedence for logical operators is `not`, `and` and `or`. This can
 >>> grade2 = 90
 >>> not grade >= 50 or grade2 >= 50
 True
+>>>
 ```
 
 To visualize the flow of the example above:
@@ -76,6 +77,7 @@ If we add parenthesis to the expressions, we can make sure the outcome evaluates
 >>> grade2 = 90
 >>> not (grade >= 50 or grade2 >= 50)
 False
+>>>
 ```
 
 To visualize the flow of this example:
