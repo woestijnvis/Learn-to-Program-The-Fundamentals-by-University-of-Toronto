@@ -229,3 +229,72 @@ The expression `num % 2 == 0` already produces a Boolean. If an expression evalu
 
 ## Structuring if Statements
 
+An `if` statement with an `elif` clause is one single statement. The statements are evaluated from top to bottom and when a statement is `True`, the code associated with that statement is executed. The following statements after the first `True` statements are ignored. That can give some unexpected results if you don't write your statements correctly.
+
+Example:
+
+```python
+grade_1 = 70
+grade_2 = 80
+
+if grade_1 >= 50:
+    print('You passed this course with grade:', grade_1)
+elif grade_2 >= 50:
+    print('You passed this course with grade:', grade_2)
+```
+
+The output of this program:
+
+```python
+You passed this course with grade: 70
+```
+
+The second statement isn't evaluated because the first statement is already `True`. A better to write this is the following way:
+
+```python
+grade_1 = 70
+grade_2 = 80
+
+if grade_1 >= 50:
+    print('You passed this course with grade:', grade_1)
+if grade_2 >= 50:
+    print('You passed this course with grade:', grade_2)
+``` 
+
+Output:
+
+```python
+You passed this course with grade: 70
+You passed this course with grade: 80
+```
+
+Chain them `if` statements!
+
+`if` statements can be nested:
+
+```python
+precipitation = True
+temp = 8
+
+if snow:
+    if precipitation > 0:
+        print('Bring your umbrella!')
+    else:
+        print('Wear your snow boots and winter coat!')
+```
+
+Both `if` statements need to be `True` for the message `Bring you umbrella!` to be printend. The message `Wear your snow boots and winter coat!` is only printed when the second `if` statements is `False`.
+
+This last example can be simplified:
+
+```python
+precipitation = True
+temp = 8
+
+if snow and precipitation > 0:
+    print('Bring your umbrella!')
+else:
+    print('Wear your snow boots and winter coat!')
+```
+
+This is more clear and easier to read and understand. Chain them statements!
