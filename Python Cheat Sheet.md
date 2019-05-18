@@ -2,7 +2,9 @@
 
 ## Variables
 
-The general form for an assignment statement:
+### General form for an assignment statement
+
+Note that an expression can have a single value because it evaluates to itself!
 
 ```
 variable = expression
@@ -17,73 +19,149 @@ variable = expression
 'Bring a towel.'
 >>> sum = 1 + 1
 2
-
-# !! Note that an expression can have a single value because it evaluates to itself. !!
+>>> 2
+2
+>>> 'This strings evaluates to itself.'
+'This strings evaluates to itself.'
+>>>
 ```
+
+## Boolean operators
+
+### Comparison operators
+
+| Description              | Operator | Example  | Result  |
+|:-------------------------|:--------:|:---------|:--------|
+| less than                | `<`      | `3 < 4`  | `True`  |
+| greater than             | `>`      | `3 > 4`  | `False` |
+| equal to                 | `==`     | `3 == 4` | `False` |
+| greater than or equal to | `>=`     | `3 >= 4` | `False` |
+| less than or equal to    | `<=`     | `3 <= 4` | `True`  |
+| not equal to             | `!=`     | `3 != 4` | `True`  |
+
+### `and` operator
+The `and` operator evaluates to `True` if both expression evaluate to `True`. If the first expression is `False`, the second expression will not even be evaluated.
+
+| Expression 1 | Expression 2 | Result  |
+|:-------------|:-------------|:--------|
+| `True`       | `True`       | `True`  |
+| `True`       | `False`      | `False` |
+| `False`      | `True`       | `False` |
+| `False`      | `False`      | `False` |
+
+```python
+>>> 80 >= 50 and 70 >= 50    # True and True → True
+True
+>>> 80 >= 50 and 100 <= 50   # True and False → False
+False
+>>> 80 <= 50 and 30 == 30    # False and True → False 
+False
+>>> 10 > 100 and 100 < 10    # False and False → False
+False
+>>>
+```
+
+### `or` operator
+
+The `or` operator evaluates to `True` if at least one expression evaluates to `True`. If the first expression is `True`, the second expression will not be evaluated because the statement as a whole already evaluates to `True`.
+
+| Expression 1 | Expression 2 | Result  |
+|:-------------|:-------------|:--------|
+| `True`       | `True`       | `True`  |
+| `True`       | `False`      | `True`  |
+| `False`      | `True`       | `True`  |
+| `False`      | `False`      | `False` |
+
+```python
+>>> 80 >= 50 or 70 >= 50    # True or True → True
+True
+>>> 80 >= 50 or 100 <= 50   # True or False → True
+True
+>>> 80 <= 50 or 30 == 30    # False or True → True
+True
+>>> 10 > 100 or 100 < 10    # False or False → False
+False
+>>>
+```
+
+### `not` operator
+
+The `not` operator evaluates to `True` if the expression evaluates to `False`.
+
+| Expression 1 | `not` Expression 1 |
+|:-------------|:-------------------|
+| `True`       | `False`            |
+| `False`      | `True`             |
+
+```python
+>>> not 80 >= 50    # not True → False
+False
+>>> not 10 > 100    # not False → True
+True
+>>>
+```
+
+Note that the order of precedence for logical operators is `not`, `and` and `or`!
 
 ## Functions
 
-The general form for a function:
+### General form for a function
+
+Note that a function can have multiple parameters!
 
 ```
-def function_name(parameter, parameter):
+def function_name(parameter):
     body
 ```
 
 ```python
-def multi(num):
+def multi(num):    # One parameter
     return num * 2
 
-def area(base, height)
+def area(base, height)    # Two parameters
     return base * height / 2
-
-# !! Note that a function can have multiple parameters. !!
 ```
 
-A function that does not have a return statement returns `None`.
+A function that does not have a return statement returns `None`. The execution of a function exits immediately when it encounters a `return` statement. All code after the `return` statement is ignored.
 
-The execution of a function exits immediately when it encounters a `return` statement. All code after the `return` statement is ignored.
+### General form for an function call
 
-The general form for an function call:
+Note that a function call can have multiple arguments!
 
 ```
-function_name(arguments, arguments)
+function_name(argument)
 ```
 
 ```python
->>> multi(2)
+>>> multi(2)    # One argument
 4
-
->>> area(3, 4)
+>>> area(3, 4)    # Two arguments
 6.0
-
-# !! Note that a function call can have multiple arguments. !!
+>>>
 ```
 
-Six steps in function design:
+### Six steps for function design
 
-1. **Examples**
+1. **Examples** (lines 6 - 9)
     - What should your function do?
     - Type a couple of examples.
     - Pick a name for the function. What is the short answer to "What does your function do"?
-2. **Type contract**
+2. **Type contract** (line 2)
     - What are the parameter types?
     - What type of value is returned?
-3. **Header**
+3. **Header** (line 1)
     - Pick meaningful parameter names.
-4. **Description**
+4. **Description** (Line 4)
     - Mention every parameter in your function.
     - Describe the return value.
-5. **Body**
+5. **Body** (Line 12)
     - Write the code.
 6. **Tests**
     - Run the examples from step 1 and try some other tests.
 
-Example of applied function design:
-
 ```python
 def convert_to_celsius(fahrenheit):
-    """(number) -> float
+    """ (number) -> float
 
     Return the number of Celsius degrees equivalent to fahrenheit degrees.
 
@@ -96,73 +174,48 @@ def convert_to_celsius(fahrenheit):
     return (fahrenheit - 32) * 5 / 9
 ```
 
-## Built-in functions
+## Indexing and Slicing
 
-`print()`
+An index is a position within a string. Each character, including spaces, have an index. Positive indexes start from 0 and read from left to right. Negative indexes start from -1 and start from right to left. Slicing does not change the string because strings are immutable.
 
-```python
->>> print('Hello', 'there.')
-Hello there.
->>> print("You're", 'a', 'bold', 'one.')
-You're a bold one.
-```
-
-`input()`
+| 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7  | 8  | 9  | 10 | 11 | 12 | 13 | 14 | 15 |
+|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| L   | e   | a   | r   | n   |     | t   | o  |    | p  | r  | o  | g  | r  | a  | m  |
+| -16 | -15 | -14 | -13 | -12 | -11 | -10 | -9 | -8 | -7 | -6 | -5 | -4 | -3 | -2 | -1 |
 
 ```python
->>> input("What's your name? ")
-What's your name? Joh Doe
-'John Doe'
->>> name = input("What's your name? ")
-What's your name? John Doe
->>> name
-'John Doe'
+>>> s = 'Learn to program'
+>>> s[0:8]
+'Learn to'
+>>> s[:8]
+'Learn to'
+>>> s[9:16]
+'program'
+>>> s[9:]
+'program'
+>>> s[9:len(s)]
+'program'
+>>> s[:]
+'Learn to program'
+>>>
 ```
 
-## Boolean operators
+You can also use negative indexes in a slice:
 
-Comparision operators:
+```python
+>>> s = 'Learn to program'
+>>> s[-16:-8]
+'Learn to'
+>>> s[-7:]
+'program'
+>>> s[-7:len(s)]
+'program'
+>>>
+```
 
-| Description              | Operator | Example  | Result  |
-|:-------------------------|:--------:|:---------|:--------|
-| less than                | `<`      | `3 < 4`  | `True`  |
-| greater than             | `>`      | `3 > 4`  | `False` |
-| equal to                 | `==`     | `3 == 4` | `False` |
-| greater than or equal to | `>=`     | `3 >= 4` | `False` |
-| less than or equal to    | `<=`     | `3 <= 4` | `True`  |
-| not equal to             | `!=`     | `3 != 4` | `True`  |
+Note that while negative indexes start from right to left, the slice is written from left to right! In the example above you can't write `s[-8:-10]` if you want the substring `to`.
 
-Logical operators:
 
-| Description | Operator | Example                     | Result  |
-|:------------|:--------:|:----------------------------|:--------|
-| not         | `not`    | `not (80 >= 50)`            | `False` |
-| and         | `and`    | `(80 >= 50) and (70 <= 50)` | `False` |
-| or          | `or`     | `(80 >= 50) or (70 <= 50)`  | `True`  |
 
-The `and` operator evaluates to `True` if both expression evaluate to `True`. If the first expression is `False`, the second expression will not even be checked:
 
-| Expression 1 | Expression 2 | Results |
-|:-------------|:-------------|:-------:|
-| `True`       | `True`       | `True`  |
-| `True`       | `False`      | `False` |
-| `False`      | `True`       | `False` |
-| `False`      | `False`      | `False` |
 
-The `or` operator evaluates to `True` if at least one expression evaluates to `True`. If the first expression is `True`, the second expression will not be checked because the statement as a whole already evaluates to `True`:
-
-| Expression 1 | Expression 2 | Results |
-|:-------------|:-------------|:-------:|
-| `True`       | `True`       | `True`  |
-| `True`       | `False`      | `True`  |
-| `False`      | `True`       | `True`  |
-| `False`      | `False`      | `False` |
-
-The `not` operator evaluates to `True` if the expression evaluates to `False`:
-
-| Expression 1 | `not` Expression 1 |
-|:-------------|:-------------------|
-| `True`       | `False`            |
-| `False`      | `True`             |
-
-The order of precedence for logical operators is `not`, `and` and `or`.
