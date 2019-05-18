@@ -106,7 +106,7 @@ The above examples show how to print a string with one character. If you want to
 >>>
 ```
 
-The last three slices (`s[9:16]`, `s[9:len(s)]` and `s[9:]`) all do the same thing: start from index 9 up to the end of the string. The first example, `s[9:16]`, is easy to read but you have to know the last index. The second example, `s[9:len(s)]`, starts at index 9 and calculates the last index with the `len()` function. The argument is the string or the variable that is assigned to the string. The last example is the shortest of all and to me the most easiest to read. If a `:` follows a number, it means that the slice starts at the number and ends at the last index.
+The last three slices (`s[9:16]`, `s[9:len(s)]` and `s[9:]`) all do the same thing: start from index 9 up to the end of the string. The first example, `s[9:16]`, is easy to read but you have to know the last index. The second example, `s[9:len(s)]`, starts at index 9 and calculates the last index with the `len()` function. The argument is the string or the variable that the string is assigned to. The last example is the shortest of all and to me the most easiest to read. If a `:` follows a number, it means that the slice starts at the number and ends at the last index.
 
 The start of the slice can also be written in several ways:
 
