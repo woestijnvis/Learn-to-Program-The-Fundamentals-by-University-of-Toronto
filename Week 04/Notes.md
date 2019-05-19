@@ -11,7 +11,7 @@ The equality and inequality operators:
 True
 >>> 'ant' == 'ace'
 False
->>> 'a' == 'a'
+>>> 'a' == 'b'
 False
 >>> 'a' != 'b'
 True
