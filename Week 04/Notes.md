@@ -62,7 +62,7 @@ Python has a built-in function to check the length of a string:
 
 ## `str`: Indexing and Slicing
 
-An index is a position within a string. Each character, including spaces, have an index. Positive indexes start from 0 and read from left to right. Negative index start from -1 and start from right to left. Example:
+An index is a position within a string. Each character, including spaces, have an index. Positive indexes start from 0 and read from left to right. Negative indexes start from -1 and start from right to left. Example:
 
 | 0   | 1   | 2   | 3   | 4   | 5   | 6   | 7  | 8  | 9  | 10 | 11 | 12 | 13 | 14 | 15 |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -134,7 +134,7 @@ You can also use negative indexes in a slice:
 >>>
 ```
 
-Note that while negative indexes start from right to left, the slice is written from left to right! In the example above you can't write `s[-8:-10]` if you want the string `to`.
+Note that while negative indexes start from right to left, the slice is written from left to right! In the example above you can't write `s[-8:-10]` if you want the substring `to`.
 
 Indexing and slicing does not change the string. In all the previous examples, the string `Learn to program` is still the same because strings are immutable. That means they can't be changed. But you can use parts of the string, concatenate it and assign it to the same variable it was previously assigned too. Example:
 
@@ -148,8 +148,108 @@ Indexing and slicing does not change the string. In all the previous examples, t
 
 ## `str` Methods: Functions Inside of Object
 
+Importing a module creates the module_name as a variable. After importing the module, you can use the functions inside of a module with `module_name.function(argument)`. Example:
+
+```python
+>>> import math
+>>> math.sqrt(4.0)
+2.0
+>>>
+```
+
+A method is a function inside of an object. In the example above, the part `.sqrt()` is the method. The general form of a method call:
+
+> `object.method(arguments)`
+
+Example:
+
+```python
+>>> white_rabbit = "I'm late! I'm late! For a very important date!"
+>>> white_rabbit.lower()
+"i'm late! i'm late! for a very important date!"
+>>> white_rabbit.count('ate')
+3
+>>>
+```
+
+In the example with `white_rabbit`, the string is never changed because strings are immutable. We seen the `lower()` and `count()` method. Both methods are built-in python and have a help page: `help(str.count)` and `help(str.find)`. There are many more methods for `str`, `help(str)` shows them all.
+
 ## `for` Loop Over `str`
 
-# Part 2: IDLE's Debugger
+The general form for a `for` loop over a `str`:
 
-## IDLE's Debugger
+```
+for variable in str:
+    body
+```
+
+Example:
+
+```python
+>>> s = Yesterday
+>>> for character in s:
+        print(s)
+Y
+e
+s
+t
+e
+r
+d
+a
+y
+>>>
+```
+
+This lessons introduces another term: accumulator. Take this example:
+
+```python
+def num_vowels(user_string):
+    """ (str) -> int
+    
+    Return the amount of vowels in user_string, but do not 
+    treat the letter y as a vowel.
+    
+    >>> num_vowels('Hello there!')
+    4
+    >>> num_vowels('Abracadabra')
+    5
+    """
+    num_vowels = 0
+
+    for character in user_string:
+        if character in 'aeiouAEIOU':
+            num_vowels = num_vowels + 1
+
+    return num_vowels
+```
+
+This is a `for` loop over a string. The loop will loop over each character in the string and if the character is in string `'aeiouAEIOU'` the amount of `num_vowels` is increased by one. After all characters are passed, the amount of vowels is returned. The accumulator in this little program is the variable `num_vowels` and it's a numeric accumulator.
+
+There is another accumulator and that's the string accumulator. Example:
+
+```python
+def collect_vowels(user_string)
+    """ (str) -> str
+    
+    Return a string with all vowels from user_string, but do no
+    treat the letter y as a vowel.
+    
+    >>> collect_vowels('Happy Anniversary!')
+    x
+    >>> collect_vowels('xyz')
+    x
+    """
+    
+    vowels = ''
+    
+    for banana in user_string:
+        if banana in 'aeiouAEIOU':
+            vowels = vowels + banana
+    
+    return vowels
+```
+
+The variable `vowels` is a string accumulator. It is set to an empty string (and we have to set it before the `for` loop, else we get an error) and accumulates the vowels in the `user_string`. After all character are looped through, a string with all vowels in it is returned. If there are no vowels an empty string is returned. 
+
+Note that `banana` is a variable and can be anything you want. It's wise to name it something that explains what it is, but this is just an example to show that you can name it anything you want.
