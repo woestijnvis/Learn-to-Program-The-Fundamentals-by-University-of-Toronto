@@ -186,7 +186,7 @@ for variable in str:
 Example:
 
 ```python
->>> s = Yesterday
+>>> s = 'Yesterday'
 >>> for character in s:
         print(s)
 Y
