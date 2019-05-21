@@ -186,7 +186,90 @@ Note that an expression using slice notation (a colon in the square brackets) wi
 
 ## List methods
 
-...
+Remember that a method is a function inside an object. For the methods in list, check what `dir(list)` outputs in python shell. This part of the course is about modifying lists and getting information from lists.
+
+Modifying lists:
+
+ - `list.append(object)`
+ - `list.extend(list)`
+ - `list.pop([index])`
+ - `list.remove(object)`
+ - `list.reverse()`
+ - `list.sort()`
+ - `list.insert(int, object)`
+
+Getting information from lists:
+
+- `list.count(object)`
+- `list.index(object)`
+
+Example:
+
+```python
+>>> colors = []
+>>> prompt = 'Enter your favorite colors: '
+>>> color = input(prompt)
+Enter your favorite colors: blue
+>>> color
+'blue'
+>>> colors
+[]
+>>> while color != '':
+        colors.append(color)
+        color = input(prompt)
+
+Enter your favorite colors: yellow
+Enter your favorite colors: brown
+Enter your favorite colors: # Hit enter to exit prompt.
+>>> colors
+['blue', 'yellow', 'brown']
+>>> colors.extend(['hot pink', 'neon green']) # Values need to be in a list!
+>>> colors
+['blue', 'yellow', 'brown', 'hot pink', 'neon green']
+>>> colors.pop() # Using this method also returns the removed value.
+'neon green'
+>>> colors
+['blue', 'yellow', 'brown', 'hot pink']
+>>> colors.pop(2)
+'brown'
+>>> colors
+['blue', 'yellow', 'hot pink']
+>>> colors.remove('black') # Error because object is not in list.
+Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+ValueError: list.remove(x): x not in list
+>>> if colors.count('yellow') > 0: # If 'yellow' in colors, remove it.
+        colors.remove('yellow')
+
+>>> colors
+['blue', 'hot pink']
+>>> if 'yellow' in colors: # This is waaay cleaner than the code above.
+        colors.remove('yellow')
+
+>>> colors.extend(['auburn', 'taupe', 'magenta']) # Make sure it's in a list!
+>>> colors
+['blue', 'hot pink', 'auburn', 'taupe', 'magenta']
+>>> colors.sort()
+>>> colors
+['auburn', 'blue', 'hot pink', 'magenta', 'taupe']
+>>> colors.reverse()
+>>> colors
+['taupe', 'magenta', 'hot pink', 'blue', 'auburn']
+>>> colors.insert(-2, 'brown') # Shifts excisting values over.
+>>> colors
+['taupe', 'magenta', 'hot pink', 'brown', 'blue', 'auburn']
+>>> if 'hot pink' in colors:
+        where = colors.index('hot pink')
+        colors.pop(where)
+
+'hot pink'
+>>> ['taupe', 'magenta', 'brown', 'blue', 'auburn']
+>>> 
+```
+
+> A function or method has a side effect if it returns a value and also modifies an object.
+
+Check the docs for list methods.
 
 ## Mutability and Aliasing
 
