@@ -273,4 +273,40 @@ Check the docs for list methods.
 
 ## Mutability and Aliasing
 
-## `range`
+So far in the course and the only type that is muttable is the list type. Floats, integers and Booleans are imuttable. Example:
+
+```python
+>>> list = [0, 2, 4, 6, 8, 10]
+>>> list[2] = 5
+>>> list
+[0, 2, 5, 6, 8, 10]
+>>>
+```
+
+We see that the value of index 2 in the list is changed from `4` to `5`. The memory address that refers to value `4` is destroyed and a new memoery address points to the new value `5`. The Python Tutor show this really well.
+
+Aliasing is creating a second name for the original object. In Windows you can a shortcut to the original file and in macOS you can make an Alias to the original file. Linux calls it soft/hard link. Aliasing in python is when two or more variables refer to the same object:
+
+```python
+>>> list_1 = [0, 2, 4, 6, 8, 10]
+>>> list_2 = list_1
+>>> list_1[-1] = 17
+>>> print(list_1[-1])
+17
+>>> print(list_2[-1])
+17
+>>> 
+```
+
+Shockingly enough, the value of `list_2` points to the value of `list_1`. Like the previous example, the Python Tutor show this really well. Another example:
+
+```python
+>>> list = [1, 2, 3]
+>>> list_2 = list
+>>> list_2.append(4)
+>>> list_2[-1]
+4
+>>> list[-1]
+4
+>>>
+```
